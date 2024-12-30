@@ -4,7 +4,8 @@
   "description": "analyzes password strength",
   "main": "app.js",
   "scripts": {
-    "test": "node ./app.js"
+    "test": "node ./app.js",
+    "prod": "node ./app.js"
   },
   "author": "bhaukal",
   "license": "ISC",
