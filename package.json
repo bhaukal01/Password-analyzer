@@ -1,0 +1,15 @@
+{
+  "name": "password-analyzer",
+  "version": "1.0.0",
+  "description": "analyzes password strength",
+  "main": "app.js",
+  "scripts": {
+    "test": "node ./app.js"
+  },
+  "author": "bhaukal",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  }
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Analyzer</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Password Analyzer</h1>
+        <form action="/analyze" method="POST">
+            <input type="password" name="password" placeholder="Enter your password" required>
+            <button type="submit">Analyze</button>
+        </form>
+
+        <% if (analysis) { %>
+            <h2>Analysis Results:</h2>
+            <p>Length: <%= analysis.length %>
+            </p>
+            <div>
+                <% if (analysis.hasLowerCase==true) { %>
+                    <p style="color: rgb(56, 207, 56); font-weight: 1000;">Lowercase</p>
+                
+                <% } else { %>
+                    <p><p style="color: red; font-weight: 1000;">Lowercase</p></p>
+                <% } %>
+            </div>
+            <div>
+                <% if (analysis.hasUpperCase==true) { %>
+                    <p style="color: rgb(56, 207, 56); font-weight: 1000;">Uppercase</p>
+                
+                <% } else { %>
+                    <p><p style="color: red; font-weight: 1000;">Uppercase</p></p>
+                <% } %>
+            </div>
+            <div>
+                <% if (analysis.hasNumbers==true) { %>
+                    <p style="color: rgb(56, 207, 56); font-weight: 1000;">Numbers</p>
+                
+                <% } else { %>
+                    <p><p style="color: red; font-weight: 1000;">Numbers</p></p>
+                <% } %>
+            </div>
+            <div>
+                <% if (analysis.hasSpecialChars==true) { %>
+                    <p style="color: rgb(56, 207, 56); font-weight: 1000;">Special Characters</p>
+                
+                <% } else { %>
+                    <p><p style="color: red; font-weight: 1000;">Special Characters</p></p>
+                <% } %>
+            </div>
+            <p style="font-weight: 1000;">Strength: <%= analysis.strength %>
+            </p>
+            <% } %>
+
+                <% if (newPassword) { %>
+                    <h2>Generated Password:</h2>
+                    <p>
+                        <%= newPassword %>
+                    </p>
+                    <% } %>
+
+                        <a href="/generate">Create Super Safe Password</a>
+    </div>
+</body>
+
+</html>
