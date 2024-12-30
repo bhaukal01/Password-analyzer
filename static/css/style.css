@@ -4,7 +4,7 @@ body {
     color: #333;
     text-align: center;
     margin: 0;
-    padding: 20px;
+    padding-top: 60px;
 }
 
 .container {
@@ -46,4 +46,11 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+.footer {
+    background-color: darkgray;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
 }
